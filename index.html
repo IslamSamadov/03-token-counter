@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LLM Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>LLM Dashboard</h1>
+    <p>Compare leading large language models at a glance</p>
+  </header>
+
+  <nav>
+    <a href="#what-is-llm">What is an LLM?</a>
+    <a href="#what-is-token">What is a Token?</a>
+    <a href="#comparison">Comparison</a>
+    <a href="#model-cards">Model Cards</a>
+    <a href="how-it-works.html">How It Works</a>
+    <a href="tokenCounter.html">Token Counter</a>
+  </nav>
+
+  <main>
+    <section id="what-is-llm">
+      <h2>What is an LLM?</h2>
+      <p>
+        A Large Language Model (LLM) is a type of artificial intelligence trained on vast
+        amounts of text data. It learns patterns in language and can generate human-like
+        text, answer questions, write code, summarise documents, and much more.
+      </p>
+      <p>
+        LLMs power tools like ChatGPT, Claude, and Gemini. They work by predicting the
+        most likely next token in a sequence, one step at a time, until a complete response
+        is formed.
+      </p>
+    </section>
+
+    <section id="what-is-token">
+      <h2>What is a Token?</h2>
+      <p>
+        A token is the basic unit of text that an LLM processes. It can be a whole word,
+        part of a word, or even a single character. On average, one token equals roughly
+        3–4 characters of English text.
+      </p>
+      <p>
+        When you send a prompt to an LLM, your text is first broken into tokens. Both the
+        input and output are counted in tokens — and pricing is typically based on how many
+        tokens you use.
+      </p>
+    </section>
+
+    <section id="comparison">
+      <h2>Model Comparison</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Model</th>
+            <th>Provider</th>
+            <th>Context Window</th>
+            <th>Input Price</th>
+            <th>Output Price</th>
+            <th>Reasoning</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>GPT-4o</td>
+            <td>OpenAI</td>
+            <td>128K</td>
+            <td>$2.50 / 1M</td>
+            <td>$10.00 / 1M</td>
+            <td class="reasoning-cell reasoning-yes-cell">✓</td>
+          </tr>
+          <tr>
+            <td>Claude Sonnet 4</td>
+            <td>Anthropic</td>
+            <td>200K</td>
+            <td>$3.00 / 1M</td>
+            <td>$15.00 / 1M</td>
+            <td class="reasoning-cell reasoning-yes-cell">✓</td>
+          </tr>
+          <tr>
+            <td>Gemini 1.5 Pro</td>
+            <td>Google</td>
+            <td>1M</td>
+            <td>$1.25 / 1M</td>
+            <td>$5.00 / 1M</td>
+            <td class="reasoning-cell reasoning-yes-cell">✓</td>
+          </tr>
+          <tr>
+            <td>Llama 3.1 70B</td>
+            <td>Meta</td>
+            <td>128K</td>
+            <td>$0.59 / 1M</td>
+            <td>$0.79 / 1M</td>
+            <td class="reasoning-cell reasoning-no-cell">✗</td>
+          </tr>
+          <tr>
+            <td>Mistral Large 2</td>
+            <td>Mistral</td>
+            <td>128K</td>
+            <td>$2.00 / 1M</td>
+            <td>$6.00 / 1M</td>
+            <td class="reasoning-cell reasoning-no-cell">✗</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="model-cards">
+      <h2>Model Cards</h2>
+      <div class="cards-grid">
+        <div class="card">
+          <div class="card-header">
+            <span class="card-provider">OpenAI</span>
+            <span class="card-reasoning reasoning-yes">Reasoning</span>
+          </div>
+          <h3 class="card-name">GPT-4o</h3>
+          <p class="card-tagline">Best for multimodal tasks, coding assistance, and real-time voice interactions.</p>
+          <ul class="card-specs">
+            <li><span class="spec-label">Context</span><span class="spec-value">128K</span></li>
+            <li><span class="spec-label">Input</span><span class="spec-value">$2.50 / 1M</span></li>
+            <li><span class="spec-label">Output</span><span class="spec-value">$10.00 / 1M</span></li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <span class="card-provider">Anthropic</span>
+            <span class="card-reasoning reasoning-yes">Reasoning</span>
+          </div>
+          <h3 class="card-name">Claude Sonnet 4</h3>
+          <p class="card-tagline">Best for complex analysis, long documents, and agentic workflows.</p>
+          <ul class="card-specs">
+            <li><span class="spec-label">Context</span><span class="spec-value">200K</span></li>
+            <li><span class="spec-label">Input</span><span class="spec-value">$3 / 1M</span></li>
+            <li><span class="spec-label">Output</span><span class="spec-value">$15 / 1M</span></li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <span class="card-provider">Google</span>
+            <span class="card-reasoning reasoning-yes">Reasoning</span>
+          </div>
+          <h3 class="card-name">Gemini 1.5 Pro</h3>
+          <p class="card-tagline">Best for tasks requiring a very long context window of up to one million tokens.</p>
+          <ul class="card-specs">
+            <li><span class="spec-label">Context</span><span class="spec-value">1M</span></li>
+            <li><span class="spec-label">Input</span><span class="spec-value">$1.25 / 1M</span></li>
+            <li><span class="spec-label">Output</span><span class="spec-value">$5 / 1M</span></li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <span class="card-provider">Meta</span>
+            <span class="card-reasoning reasoning-no">No Reasoning</span>
+          </div>
+          <h3 class="card-name">Llama 3.1 70B</h3>
+          <p class="card-tagline">Best for cost-efficient deployments and open-source customisation.</p>
+          <ul class="card-specs">
+            <li><span class="spec-label">Context</span><span class="spec-value">128K</span></li>
+            <li><span class="spec-label">Input</span><span class="spec-value">$0.59 / 1M</span></li>
+            <li><span class="spec-label">Output</span><span class="spec-value">$0.79 / 1M</span></li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <span class="card-provider">Mistral</span>
+            <span class="card-reasoning reasoning-no">No Reasoning</span>
+          </div>
+          <h3 class="card-name">Mistral Large 2</h3>
+          <p class="card-tagline">Best for European compliance requirements and multilingual tasks.</p>
+          <ul class="card-specs">
+            <li><span class="spec-label">Context</span><span class="spec-value">128K</span></li>
+            <li><span class="spec-label">Input</span><span class="spec-value">$2 / 1M</span></li>
+            <li><span class="spec-label">Output</span><span class="spec-value">$6 / 1M</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 LLM Dashboard. Built for BONUS Lab 02.</p>
+  </footer>
+</body>
+</html>

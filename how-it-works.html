@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How an LLM Works</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>LLM Dashboard</h1>
+    <p>Compare leading large language models at a glance</p>
+  </header>
+
+  <nav>
+    <a href="index.html">Dashboard</a>
+    <a href="how-it-works.html">How It Works</a>
+    <a href="tokenCounter.html">Token Counter</a>
+  </nav>
+
+  <main>
+    <section id="timeline">
+      <h2>How an LLM Works</h2>
+      <ol class="timeline">
+        <li class="timeline-step">
+          <div class="step-marker">1</div>
+          <div class="step-content">
+            <h3>User Input</h3>
+            <p>
+              The user types a prompt into the chat interface and submits it. The raw text
+              is sent to the model's API as a plain-text string, ready to be processed.
+            </p>
+          </div>
+        </li>
+
+        <li class="timeline-step">
+          <div class="step-marker">2</div>
+          <div class="step-content">
+            <h3>Tokenisation</h3>
+            <p>
+              The raw text is broken into tokens — small chunks of roughly 3–4 characters.
+              For example, "Hello, world!" becomes ["Hello", ",", " world", "!"]. Each unique
+              token is mapped to a specific integer called a token ID.
+            </p>
+          </div>
+        </li>
+
+        <li class="timeline-step">
+          <div class="step-marker">3</div>
+          <div class="step-content">
+            <h3>Embedding</h3>
+            <p>
+              Each token ID is looked up in an embedding table and converted into a
+              high-dimensional vector — a list of numbers that encodes the semantic meaning
+              of the token in a form the neural network can process.
+            </p>
+          </div>
+        </li>
+
+        <li class="timeline-step">
+          <div class="step-marker">4</div>
+          <div class="step-content">
+            <h3>Attention Layers</h3>
+            <p>
+              The embedded tokens pass through dozens of transformer layers. Each layer uses
+              self-attention to weigh how much every token should influence every other token,
+              allowing the model to capture context and relationships across the entire prompt.
+            </p>
+          </div>
+        </li>
+
+        <li class="timeline-step">
+          <div class="step-marker">5</div>
+          <div class="step-content">
+            <h3>Prediction</h3>
+            <p>
+              After processing through all layers, the model produces a probability
+              distribution over its entire vocabulary — a score for every possible next token.
+              The token with the highest probability (or one sampled from the distribution)
+              is selected as the next output token.
+            </p>
+          </div>
+        </li>
+
+        <li class="timeline-step">
+          <div class="step-marker">6</div>
+          <div class="step-content">
+            <h3>Output Generation</h3>
+            <p>
+              The predicted token is appended to the sequence and the process repeats —
+              tokenise, embed, attend, predict — one token at a time until a stop condition
+              is met. The final string of tokens is decoded back into human-readable text
+              and streamed to the user.
+            </p>
+          </div>
+        </li>
+      </ol>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 LLM Dashboard. Built for BONUS Lab 02.</p>
+  </footer>
+</body>
+</html>
