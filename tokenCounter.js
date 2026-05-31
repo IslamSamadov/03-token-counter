@@ -2,9 +2,13 @@ function cleanText(text) {
   return text.trim();
 }
 
+console.log(cleanText("  Hello world  "));
+
 function splitIntoWords(text) {
   return text.split(" ");
 }
+
+console.log(splitIntoWords("The quick brown fox"));
 
 function removeEmptyWords(words) {
   return words.filter(function(word) {
@@ -12,9 +16,16 @@ function removeEmptyWords(words) {
   });
 }
 
+const messy = splitIntoWords("Hello   world");
+console.log(messy);
+console.log(removeEmptyWords(messy));
+
 function estimateTokens(words) {
   return Math.ceil(words.length * 0.75);
 }
+
+const words = ["The", "quick", "brown", "fox"];
+console.log(estimateTokens(words));
 
 function countTokens(text) {
   const cleaned = cleanText(text);
@@ -23,13 +34,7 @@ function countTokens(text) {
   return estimateTokens(filtered);
 }
 
-const inputText = document.getElementById("inputText");
-const result = document.getElementById("result");
-
-function updateTokenCount() {
-  const tokenCount = countTokens(inputText.value);
-  result.textContent = "Estimated tokens: " + tokenCount;
-}
-
-inputText.addEventListener("input", updateTokenCount);
-updateTokenCount();
+console.log(countTokens("Hello"));
+console.log(countTokens("Hello, world!"));
+console.log(countTokens("The quick brown fox jumps over the lazy dog"));
+console.log(countTokens("  I am learning JavaScript   today  "));
